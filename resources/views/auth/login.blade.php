@@ -44,7 +44,7 @@
                                 </div>
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" placeholder="Email">
+                                    value="{{ old('email') ? old('email') : 'admin@test.com' }}" placeholder="Email">
                                 @error('email')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -57,7 +57,7 @@
                                 </div>
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" placeholder="Password"
-                                    name="password">
+                                    name="password" value="admin123">
                                 @error('password')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
